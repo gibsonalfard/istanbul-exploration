@@ -34,6 +34,67 @@ function selection(){
 
         return result;
     }
+
+    this.select4Ambil = function(x, saldo, limit){
+        if(saldo > x){
+            if(limit > x){
+                return saldo-x;
+            }
+        }
+        return -1;
+    }
+
+    this.select5BilanganNol = function(x){
+        if(x != 0){
+            if(x > 0){
+                return 1;
+            }else{
+                return -1
+            }
+        }
+
+        return 0
+    }
+
+    this.select6Ambil = function(x, saldo, limit){
+        if(saldo < x){
+            return -1
+        }else{
+            if(limit > x){
+                return saldo - x;
+            }
+        }
+        return limit;
+    }
+
+    this.select7Ambil = function(x, saldo, limit){
+        limUtang = 25;
+
+        if(saldo > x){
+            if(limit-x >= 0){
+                return saldo - x;
+            }
+        }else{
+            if(Math.abs(saldo-x) < limUtang){
+                return limUtang;
+            }
+        }
+        return -1;
+    }
+
+    // this.select8 = function(){
+    //     if(saldo > x){
+    //         if(limit-x >= 0){
+    //             return saldo - x;
+    //         }
+    //     }else{
+    //         if(Math.abs(saldo-x) < limUtang){
+    //             return limUtang;
+    //         }else{
+
+    //         }
+    //     }
+    // }
 }
 
 module.exports = new selection();
