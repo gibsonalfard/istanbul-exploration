@@ -82,16 +82,69 @@ function selection(){
         return -1;
     }
 
-    // this.select8 = function(){
-    //     if(saldo > x){
-    //         if(limit-x >= 0){
-    //             return saldo - x;
-    //         }
-    //     }else{
-    //         if(Math.abs(saldo-x) < limUtang){
-    //             return limUtang;
-    //         }else{
+    this.select8Tax = function(amount){
+        var tax = 0;
+        var tmpAmount = amount;
+        if(amount >= 1000){
+            if(amount >= 2000){
+                tax = (7.5/100)*tmpAmount;
+                tmpAmount -= tax;
+            }
+            tax += (5/100)*tmpAmount;
+        }else{
+            if(amount > 500){
+                tax = (2.5/100)*tmpAmount;
+            }else{
+                tax = (1/100)*tmpAmount;
+            }
+        }
 
+        return tax;
+    }
+
+    this.select9Tax = function(amount){
+        var tax = 0;
+        var tmpAmount = amount;
+        if(amount < 1000){
+            if(amount > 500){
+                tax = (2.5/100)*tmpAmount;
+            }else{
+                tax = (1/100)*tmpAmount;
+            }
+        }else{
+            if(amount >= 2000){
+                tax = (7.5/100)*tmpAmount;
+                tmpAmount -= tax;
+            }
+            tax += (5/100)*tmpAmount;
+        }
+
+        return tax;
+    }
+
+    this.select10Opsi6 = function(opsi, amount, saldo){
+        if(opsi != 6){
+            if(saldo > 120){
+                return saldo - 20;
+            }else{
+                return -2;
+            }
+        }else{
+            if(amount%20 == 0){
+                return saldo - amount;
+            }else{
+                return -1;
+            }
+        }
+    }
+
+    // this.select11 = function(opsi){
+        
+    // }
+
+    // this.select12 = function(opsi){
+    //     if(typeof(opsi) == "string"){
+    //         switch(opsi){
     //         }
     //     }
     // }
