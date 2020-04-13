@@ -138,16 +138,44 @@ function selection(){
         }
     }
 
-    // this.select11 = function(opsi){
-        
-    // }
+    this.select11Calculator = function(x,y,opsi){
+        var result = 0;
+        if(opsi > 0){
+            switch(opsi){
+                case 1: result = x+y; break;
+                case 2: result = x-y; break;
+                case 3: result = x*y; break;
+                case 4: result = x/y; break;
+                default: result = -1; break;
+            }
+        }
+        return result;
+    }
 
-    // this.select12 = function(opsi){
-    //     if(typeof(opsi) == "string"){
-    //         switch(opsi){
-    //         }
-    //     }
-    // }
+    this.select12ATMMenu = function(auth, menu){
+        if(auth == 1){
+            switch(menu){
+                case 1: return "This is Your Balance : $1000"; break;
+                case 2: return "Withdrawal menu"; break; 
+                case 3: return "Transfer Menu"; break;
+                default: return "Menu not found"; break;
+            }
+        }else{
+            switch(menu){
+                case 1: return "Admin menu : Change User Password"; break;
+                case 2: return "Admin menu : Show monthly report"; break;
+                default : return "Admin menu : Menu not found"; break;
+            }
+        }
+    }
+
+    this.select13 = function(){
+
+    }
+
+    this.select114DaysInMonth = function(){
+
+    }
 }
 
 module.exports = new selection();
