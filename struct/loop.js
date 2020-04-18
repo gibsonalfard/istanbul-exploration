@@ -24,7 +24,7 @@ function loop() {
         var total = 0;
 
         do{
-            total += 1;
+            total += i;
             i += interval;
         }while(i<=end);
 
@@ -103,6 +103,7 @@ function loop() {
             }else{
                 stack -= 1;
             }
+            i += 1;
         }
 
         // Return 0 kalau '(' dan ')' jumlahnya sama
@@ -120,6 +121,7 @@ function loop() {
             }else{
                 stack -= 1;
             }
+            i += 1;
         }while(i < len);
 
         // Return 0 kalau '(' dan ')' jumlahnya sama
@@ -171,6 +173,7 @@ function loop() {
                     hole += 2;
                 break;
             }
+            i += 1;
         }
 
         return hole;
@@ -196,6 +199,7 @@ function loop() {
                     hole += 2;
                 break;
             }
+            i += 1;
         }while(i<len);
 
         return hole;
@@ -212,6 +216,8 @@ function loop() {
             }
             str = str.concat(")");
         }
+        
+        return str;
     }
 
     this.loop14WhileFor = function(len1, len2){
@@ -226,6 +232,8 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }
+
+        return str;
     }
 
     this.loop15DoWhileFor = function(len1, len2){
@@ -240,6 +248,8 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }while(i<len1);
+
+        return str;
     }
 
     this.loop16ForWhile = function(len1, len2){
@@ -254,6 +264,7 @@ function loop() {
             }
             str = str.concat(")");
         }
+        return str;
     }
 
     this.loop17WhileWhile = function(len1, len2){
@@ -269,6 +280,7 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }
+        return str;
     }
 
     this.loop18DoWhileWhile = function(len1, len2){
@@ -284,6 +296,7 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }while(i<len1);
+        return str;
     }
 
     this.loop19ForDoWhile = function(len1, len2){
@@ -298,6 +311,7 @@ function loop() {
             }while(j<len2);
             str = str.concat(")");
         }
+        return str;
     }
 
     this.loop20WhileDoWhile = function(len1, len2){
@@ -313,6 +327,7 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }
+        return str;
     }
 
     this.loop21DoWhileDoWhile = function(len1, len2){
@@ -328,7 +343,8 @@ function loop() {
             str = str.concat(")");
             i += 1;
         }while(i<len1);
+        return str;
     }
 }
 
-module.exports = new sequence();
+module.exports = new loop();
