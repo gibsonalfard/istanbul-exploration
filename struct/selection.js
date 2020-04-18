@@ -294,9 +294,6 @@ function selection(){
                     case 1:
                         text = "Melihat saldo";
                     break;
-                    case 2:
-                        text = "Melihat Mutasi";
-                    break
                     default:
                         text = "Menu Saldo : Masukan Invalid";
                     break;
@@ -311,9 +308,6 @@ function selection(){
                         text = "Menu Withdraw $40";
                     break;
                     case 3:
-                        text = "Menu Withdraw $00";
-                    break;
-                    case 4:
                         text = "Nominal Withdraw lainnya";
                     break;
                     default:
