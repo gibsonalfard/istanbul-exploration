@@ -211,8 +211,113 @@ function selection(){
         return valid;
     }
 
-    this.select114DaysInMonth = function(month, year){
+    this.select14DaysInMonth = function(month, year, day){
+        var leap = this.selection5isLeapYear(year)
+        var valid;
 
+        switch(month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                if(day >= 31){
+                    console.log("Date is Invalid");
+                    valid = false;
+                }else{
+                    valid = true;
+                }
+            break;
+            case 2:
+                if(leap){
+                    valid = day <= 29;
+                }else{
+                    valid = day <= 28;
+                }
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if(day >= 30){
+                    console.log("Data is Invalid 2");
+                    valid = false;
+                }else{
+                    valid = true;
+                }
+            break;
+            default:
+                console.log("Input invalid");
+                valid = false;
+            break; 
+        }
+
+        return valid;
+    }
+
+    this.selection15isDayValid = function(numbery){
+        var mod = number%2;
+        var text = "";
+        switch(mod){
+            case 0:
+                if(number > 0){
+                    text = text.concat("Bilangan Genap Positif, ");
+                }
+                if(number > 7){
+                    text = text.concat("Bilangan lebih besar dari 7");
+                }else{
+                    text = text.concat("Bilangan kecil dari 7");
+                }
+            case 1:
+                if(number > 0){
+                    text = text.concat("Bilangan Ganjil Positif, ");
+                }
+                if(number > 7){
+                    text = text.concat("Bilangan lebih besar dari 7");
+                }else{
+                    text = text.concat("Bilangan kecil dari 7");
+                }
+            break;
+        }
+
+        return text;
+    }
+
+    this.selection16ATM = function(ops1, ops2){
+        var text = "";
+
+        switch(ops1){
+            case 1:
+                switch(ops2){
+                    case 1:
+                        text = "Melihat saldo";
+                    break;
+                    default:
+                        text = "Menu Saldo : Masukan Invalid";
+                    break;
+                }
+            break;
+            case 2:
+                switch(ops2){
+                    case 1:
+                        text = "Menu Withdraw $20";
+                    break;
+                    case 2:
+                        text = "Menu Withdraw $40";
+                    break;
+                    case 3:
+                        text = "Nominal Withdraw lainnya";
+                    break;
+                    default:
+                        text = "Menu Withdraw : Masukan Invalid";
+                    break;
+                }
+            break;
+            default:
+                text = "Keluar";
+        }
     }
 }
 
