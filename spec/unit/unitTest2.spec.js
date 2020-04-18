@@ -344,7 +344,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 1; //auth
         _numberB = 1; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("This is Your Balance : $1000");
 
@@ -352,7 +352,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 1; //auth
         _numberB = 2; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Withdrawal menu");
 
@@ -360,7 +360,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 1; //auth
         _numberB = 3; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Transfer Menu");
 
@@ -368,7 +368,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 1; //auth
         _numberB = 4; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Menu not found");
     });
@@ -378,7 +378,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 0; //auth
         _numberB = 1; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Admin menu : Change User Password");
 
@@ -386,7 +386,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 0; //auth
         _numberB = 2; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Admin menu : Show monthly report");
 
@@ -394,7 +394,7 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 0; //auth
         _numberB = 3; //menu
 
-        var result = selection.select11Calculator(_numberA, _numberB);
+        var result = selection.select12ATMMenu(_numberA, _numberB);
 
         expect(result).toEqual("Admin menu : Menu not found");
 
@@ -506,37 +506,37 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         //Test Case Bilangan Genap Positif
         _numberA = 4; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan Genap Positif, ");
 
         //Test Case Bilangan lebih besar dari 7
         _numberA = 8; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan Genap Positif, Bilangan lebih besar dari 7");
 
         //Test Bilangan lebih kecil dari 7
         _numberA = -4; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan kecil dari 7");
 
         //Test Case Bilangan Ganjil Positif
         _numberA = 3; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan Ganjil Positif, ");
 
         //Test Case Bilangan lebih besar dari 7
         _numberA = 9; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan Ganjil Positif, Bilangan lebih besar dari 7");
 
         //Test Case Bilangan lebih kecil dari 7
         _numberA = -3; //number
 
-        var result = selection.select14DaysInMonth(_numberA);
+        var result = selection.selection15isDayValid(_numberA);
         expect(result).toEqual("Bilangan kecil dari 7");
     });
 /*===================================================================================================================*/
@@ -547,48 +547,48 @@ describe("UNIT TEST NO 2 : Selection ", function() {
         _numberA = 1; //ops1
         _numberB = 1; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Melihat saldo");
 
         _numberA = 1; //ops1
         _numberB = 2; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Menu Saldo : Masukan Invalid");
 
         //Test Case menu withdraw 20
         _numberA = 2; //ops1
         _numberB = 1; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Menu Withdraw $20");
 
         //Test Case menu withdraw 40
         _numberA = 2; //ops1
         _numberB = 2; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Menu Withdraw $40");
 
         //Test Case Nominal Withdraw lainnya
         _numberA = 2; //ops1
         _numberB = 3; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Nominal Withdraw lainnya");
 
         //Test Case Default Menu Withdraw : Masukan Invalid
         _numberA = 2; //ops1
         _numberB = 4; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Menu Withdraw : Masukan Invalid");
 
         //Test Case Keluar
         _numberA = 3; //ops1
         _numberB = 0; //ops2
 
-        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        var result = selection.selection16ATM(_numberA,_numberB);
         expect(result).toEqual("Keluar");
     });
 /*===================================================================================================================*/
