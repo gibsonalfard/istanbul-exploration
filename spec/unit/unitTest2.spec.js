@@ -400,4 +400,196 @@ describe("UNIT TEST NO 2 : Selection ", function() {
 
     });
 /*===================================================================================================================*/
+
+/*===================================================================================================================*/
+    it("Selection 13: ", function(){
+    //Test Case Date is Invalid
+    _numberA = 1; //month
+    _numberB = 32; //day
+
+    var result = selection.select13isDateValid(_numberA,_numberB);
+
+    expect(result).toEqual(false);
+
+    //Test Case Month Detected is February
+    _numberA = 2; //month
+    _numberB = 28; //day
+
+    var result = selection.select13isDateValid(_numberA, _numberB);
+
+    expect(result).toEqual(true);
+
+    _numberA = 2; //month
+    _numberB = 29; //day
+
+    var result = selection.select13isDateValid(_numberA, _numberB);
+
+    expect(result).toEqual(false);
+
+    //Test Case Data is Invalid 2
+    _numberA = 4; //month
+    _numberB = 31; //day
+
+    var result = selection.select13isDateValid(_numberA,_numberB);
+
+    expect(result).toEqual(false);
+
+    //Test Case Default
+    _numberA = 0; //month
+    _numberB = 0; //day
+
+    var result = selection.select13isDateValid(_numberA,_numberB);
+
+    expect(result).toEqual(false);
+    });
+/*===================================================================================================================*/
+
+/*===================================================================================================================*/
+    it("Selection 14", function(){
+    //Test Case Date is Invalid
+    _numberA = 1; //month
+    _numberB = 400; //year
+    _numberC = 31; //day
+
+    var result = selection.select14DaysInMonth(_numberA, _numberB, _numberC);
+    expect(result).toEqual(false);
+
+    _numberA = 1; //month
+    _numberB = 400; //year
+    _numberC = 30; //day
+
+    var result = selection.select14DaysInMonth(_numberA, _numberB, _numberC);
+    expect(result).toEqual(true);
+
+    //Test Case Leap Check
+    _numberA = 2; //month
+    _numberB = 400; //year
+    _numberC = 29; //day
+
+    var result = selection.select14DaysInMonth(_numberA,_numberB,_numberC);
+    expect(result).toEqual(true);
+
+    _numberA = 2; //month
+    _numberB = 401; //year
+    _numberC = 28; //day
+
+    var result = selection.select14DaysInMonth(_numberA,_numberB,_numberC);
+    expect(result).toEqual(true);
+
+    //Test Case Data is Invalid 2
+    _numberA = 4; //month
+    _numberB = 400; //year
+    _numberC = 30; //day
+
+    var result = selection.select14DaysInMonth(_numberA,_numberB,_numberC);
+    expect(result).toEqual(false);
+
+    _numberA = 4; //month
+    _numberB = 400; //year
+    _numberC = 29; //day
+
+    var result = selection.select14DaysInMonth(_numberA,_numberB,_numberC);
+    expect(result).toEqual(true);
+
+    //Test Case Default (Input Invalid)
+    _numberA = 13; //month
+    _numberB = 400; //year
+    _numberC = 29; //day
+
+    var result = selection.select14DaysInMonth(_numberA,_numberB,_numberC);
+    expect(result).toEqual(false);
+    });
+/*===================================================================================================================*/
+
+/*===================================================================================================================*/
+    it("Selection 15:",function(){
+        //Test Case Bilangan Genap Positif
+        _numberA = 4; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan Genap Positif, ");
+
+        //Test Case Bilangan lebih besar dari 7
+        _numberA = 8; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan Genap Positif, Bilangan lebih besar dari 7");
+
+        //Test Bilangan lebih kecil dari 7
+        _numberA = -4; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan kecil dari 7");
+
+        //Test Case Bilangan Ganjil Positif
+        _numberA = 3; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan Ganjil Positif, ");
+
+        //Test Case Bilangan lebih besar dari 7
+        _numberA = 9; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan Ganjil Positif, Bilangan lebih besar dari 7");
+
+        //Test Case Bilangan lebih kecil dari 7
+        _numberA = -3; //number
+
+        var result = selection.select14DaysInMonth(_numberA);
+        expect(result).toEqual("Bilangan kecil dari 7");
+    });
+/*===================================================================================================================*/
+
+/*===================================================================================================================*/
+    it("Selection 16:", function(){
+        //Test Case melihat Saldo
+        _numberA = 1; //ops1
+        _numberB = 1; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Melihat saldo");
+
+        _numberA = 1; //ops1
+        _numberB = 2; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Menu Saldo : Masukan Invalid");
+
+        //Test Case menu withdraw 20
+        _numberA = 2; //ops1
+        _numberB = 1; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Menu Withdraw $20");
+
+        //Test Case menu withdraw 40
+        _numberA = 2; //ops1
+        _numberB = 2; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Menu Withdraw $40");
+
+        //Test Case Nominal Withdraw lainnya
+        _numberA = 2; //ops1
+        _numberB = 3; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Nominal Withdraw lainnya");
+
+        //Test Case Default Menu Withdraw : Masukan Invalid
+        _numberA = 2; //ops1
+        _numberB = 4; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Menu Withdraw : Masukan Invalid");
+
+        //Test Case Keluar
+        _numberA = 3; //ops1
+        _numberB = 0; //ops2
+
+        var result = selection.select14DaysInMonth(_numberA,_numberB);
+        expect(result).toEqual("Keluar");
+    });
+/*===================================================================================================================*/
 });

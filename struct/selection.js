@@ -257,7 +257,7 @@ function selection(){
         return valid;
     }
 
-    this.selection15isDayValid = function(numbery){
+    this.selection15isDayValid = function(number){
         var mod = number%2;
         var text = "";
         switch(mod){
