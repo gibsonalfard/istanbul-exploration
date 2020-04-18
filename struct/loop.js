@@ -213,6 +213,122 @@ function loop() {
             str = str.concat(")");
         }
     }
+
+    this.loop14WhileFor = function(len1, len2){
+        var i = 0;
+        var j = 0;
+        var str = "";
+        while(i<len1){
+            str = str.concat("(");
+            for(j=0;j<len2;j++){
+                str = str.concat("+");
+            }
+            str = str.concat(")");
+            i += 1;
+        }
+    }
+
+    this.loop15DoWhileFor = function(len1, len2){
+        var i = 0;
+        var j = 0;
+        var str = "";
+        do{
+            str = str.concat("(");
+            for(j=0;j<len2;j++){
+                str = str.concat("+");
+            }
+            str = str.concat(")");
+            i += 1;
+        }while(i<len1);
+    }
+
+    this.loop16ForWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        for(i=0;i<len1;i++){
+            str = str.concat("(");
+            j = 0;
+            while(j<len2){
+                str = str.concat("+");
+                j += 1;
+            }
+            str = str.concat(")");
+        }
+    }
+
+    this.loop17WhileWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        while(i<len1){
+            str = str.concat("(");
+            j = 0;
+            while(j<len2){
+                str = str.concat("+");
+                j += 1;
+            }
+            str = str.concat(")");
+            i += 1;
+        }
+    }
+
+    this.loop18DoWhileWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        do{
+            str = str.concat("(");
+            j = 0;
+            while(j<len2){
+                str = str.concat("+");
+                j += 1;
+            }
+            str = str.concat(")");
+            i += 1;
+        }while(i<len1);
+    }
+
+    this.loop19ForDoWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        for(i=0;i<len1;i++){
+            str = str.concat("(");
+            j = 0;
+            do{
+                str = str.concat("+");
+                j += 1;
+            }while(j<len2);
+            str = str.concat(")");
+        }
+    }
+
+    this.loop20WhileDoWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        while(i<len1){
+            str = str.concat("(");
+            j = 0;
+            do{
+                str = str.concat("+");
+                j += 1;
+            }while(j<len2);
+            str = str.concat(")");
+            i += 1;
+        }
+    }
+
+    this.loop21DoWhileDoWhile = function(len1, len2){
+        var i = 0;
+        var str = "";
+        do{
+            str = str.concat("(");
+            j = 0;
+            do{
+                str = str.concat("+");
+                j += 1;
+            }while(j<len2);
+            str = str.concat(")");
+            i += 1;
+        }while(i<len1);
+    }
 }
 
 module.exports = new sequence();
