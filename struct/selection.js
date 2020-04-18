@@ -263,21 +263,21 @@ function selection(){
         switch(mod){
             case 0:
                 if(number > 0){
-                    text = text.append("Bilangan Genap Positif, ");
+                    text = text.concat("Bilangan Genap Positif, ");
                 }
                 if(number > 7){
-                    text = text.append("Bilangan lebih besar dari 7");
+                    text = text.concat("Bilangan lebih besar dari 7");
                 }else{
-                    text = text.append("Bilangan kecil dari 7");
+                    text = text.concat("Bilangan kecil dari 7");
                 }
             case 1:
                 if(number > 0){
-                    text = text.append("Bilangan Ganjil Positif, ");
+                    text = text.concat("Bilangan Ganjil Positif, ");
                 }
                 if(number > 7){
-                    text = text.append("Bilangan lebih besar dari 7");
+                    text = text.concat("Bilangan lebih besar dari 7");
                 }else{
-                    text = text.append("Bilangan kecil dari 7");
+                    text = text.concat("Bilangan kecil dari 7");
                 }
             break;
         }
