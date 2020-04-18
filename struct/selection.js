@@ -44,16 +44,18 @@ function selection(){
         return -1;
     }
 
-    this.select5BilanganNol = function(x){
-        if(x != 0){
-            if(x > 0){
-                return 1;
+    this.selection5isLeapYear = function(year){
+        if(year%4 == 0){
+            if(year%100 == 0){
+                if(year%400 == 0){
+                    return true;
+                }
             }else{
-                return -1
+                return true;
             }
         }
 
-        return 0
+        return false;
     }
 
     this.select6Ambil = function(x, saldo, limit){
@@ -169,11 +171,47 @@ function selection(){
         }
     }
 
-    this.select13 = function(){
+    this.select13isDateValid = function(month, day){
+        var valid = true;
 
+        switch(month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                if(day > 31){
+                    console.log("Date is Invalid");
+                    valid = false;
+                }
+            break;
+            case 2:
+                if(day > 28){
+                    console.log("Month detected is February");
+                    valid = false;
+                }
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if(day > 30){
+                    console.log("Data is Invalid 2");
+                    valid = false;
+                }
+            break;
+            default:
+                console.log("Input invalid");
+                valid = false;
+            break;
+        }
+
+        return valid;
     }
 
-    this.select114DaysInMonth = function(){
+    this.select114DaysInMonth = function(month, year){
 
     }
 }
